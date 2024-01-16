@@ -1,0 +1,40 @@
+# Node.js
+node_modules/
+
+# Build files
+dist/
+
+# IDE files
+.vscode/
+
+# OS-generated files
+.DS_Store
+Thumbs.db
+
+# Environment variables
+.env
+
+# Compiled JavaScript
+*.bundle.js
+
+# Cache and logs
+.cache/
+logs/
+
+# Dependency directories
+bower_components/
+jspm_packages/
+
+# Editor-specific files
+*.sublime-project
+*.sublime-workspace
+*.idea/
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+
+# Dependency lock files
+package-lock.json
+yarn.lock
