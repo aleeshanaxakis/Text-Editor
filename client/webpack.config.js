@@ -18,12 +18,29 @@ module.exports = () => {
       path: path.resolve(__dirname, 'dist'),
     },
     plugins: [
-      
+      new HtmlWebpackPlugin({
+        template: './src/index.html',
+        filename: 'index.html',
+        chunks: ['main'],
+      }),
+      new HtmlWebpackPlugin({
+        template: './src/install.html',
+        filename: 'install.html',
+        chunks: ['install'],
+      }),
+      new InjectManifest({
+        swSrc: './src-sw.js',
+        swDest: 'src-sw.js',
+        include: [/\.html$/, /\.js$/, /\.css$/],
+      }),
     ],
 
     module: {
       rules: [
-        
+        {
+          test: /\.css$/,
+          use: ['style-loader', 'css-loader'],
+        },
       ],
     },
   };
