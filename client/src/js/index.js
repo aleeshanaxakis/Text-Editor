@@ -17,11 +17,12 @@ const loadSpinner = () => {
   main.appendChild(spinner);
 };
 
-const editor = new Editor();
+const initApp = async () => {
+  const editor = new Editor();
 
-if (typeof editor === 'undefined') {
-  loadSpinner();
-}
+  if (typeof editor === 'undefined') {
+    loadSpinner();
+  }
 
 // Check if service workers are supported
 if ('serviceWorker' in navigator) {
@@ -31,4 +32,10 @@ if ('serviceWorker' in navigator) {
 } else {
   console.error('Service workers are not supported in this browser.');
 }
+
+};
+
+
+// Initialize the app when the DOM is loaded
+document.addEventListener('DOMContentLoaded', initApp);
 
