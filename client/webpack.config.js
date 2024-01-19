@@ -28,6 +28,7 @@ module.exports = () => {
         swDest: 'src-sw.js',
       }),
       new WebpackPwaManifest({
+        filename: 'manifest.json',
         name: 'Your PWA Text Editor',
         short_name: 'Text Editor',
         description: 'A progressive web app text editor.',
@@ -45,6 +46,16 @@ module.exports = () => {
 
     module: {
       rules: [
+        {
+          test: /\.js$/,
+          exclude: /node_modules/,
+          use: {
+            loader: 'babel-loader',
+            options: {
+              presets: ['@babel/preset-env'],
+            },
+          },
+        },
         {
           test: /\.css$/,
           use: ['style-loader', 'css-loader'],
