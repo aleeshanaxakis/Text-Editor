@@ -15,12 +15,13 @@
     "author": "",
     "license": "ISC",
     "dependencies": {
-      "express": "^4.17.1",
-      "if-env": "^1.0.4"
+        "express": "^4.17.1",
+        "if-env": "^1.0.4"
     },
     "devDependencies": {
-      "concurrently": "^5.2.0",
-      "nodemon": "^2.0.4"
+        "@babel/core": "^7.23.7",
+        "@babel/preset-env": "^7.23.8",
+        "concurrently": "^5.2.0",
+        "nodemon": "^2.0.4"
     }
-  }
-    
+}

@@ -27,6 +27,11 @@ export default class {
     getDb().then((data) => {
       console.info('Loaded data from IndexedDB, injecting into editor');
       this.editor.setValue(data || localData || header);
+    })
+    .catch((error) => {
+      console.error('Error loading data from IndexedDB:', error);
+      // Handle the error by falling back to local storage
+      this.editor.setValue(localData || header);
     });
 
     this.editor.on('change', () => {
@@ -36,7 +41,7 @@ export default class {
     // Save the content of the editor when the editor itself is loses focus
     this.editor.on('blur', () => {
       console.log('The editor has lost focus');
-      putDb(localStorage.getItem('content'));
+      putDb(localStorage.getItem('content') || this.editor.getValue());
     });
   }
 }
