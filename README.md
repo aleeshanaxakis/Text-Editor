@@ -36,7 +36,7 @@ WHEN I deploy to Render
 THEN I should have proper build scripts for a webpack application
 
 ## Installation
-Deployed site on Render:
+Deployed site on Render: https://text-editor-m4n5.onrender.com
 
 ## Usage
 Developers use text editors to create notes or code snippets with or without an internet connection so that they can reliably retrieve them for later use.
